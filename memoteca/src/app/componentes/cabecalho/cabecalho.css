@@ -1,5 +1,11 @@
+
+:host {
+  display: block;
+  width: 100%;
+}
+
 .cabecalho {
-  background: url(/assets/imagens/fundo-cabecalho.png);
+  background: url(/public/fundo-cabecalho.png);
   background-size: cover;
   display: flex;
   align-items: center;
@@ -40,6 +46,6 @@
     width: 90%;
   }
   .cabecalho .imagem {
-    display: none;
+    display: block;
   }
 }
