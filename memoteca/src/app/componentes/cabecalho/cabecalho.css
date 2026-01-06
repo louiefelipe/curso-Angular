@@ -5,7 +5,7 @@
 }
 
 .cabecalho {
-  background: url(/public/fundo-cabecalho.png);
+  background: url(/imagens/fundo-cabecalho.png);
   background-size: cover;
   display: flex;
   align-items: center;
