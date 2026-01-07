@@ -16,7 +16,7 @@
 }
 
 .criar-pensamentos form {
-  background: #C4EDFF;
+  background: #cacaca;
 
   border: none;
   border-radius: 20px;
@@ -90,7 +90,7 @@
 }
 
 .modelo3 {
-  box-shadow: 8px 8px 0px #84EEC1;
+  box-shadow: 8px 8px 0px #448b6e;
 }
 
 input[type='radio'] {

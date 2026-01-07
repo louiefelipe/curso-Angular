@@ -8,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class CriarPensamento {
 
+  pensamento = {
+    id: '1',
+    conteudo:'aprendendo angular',
+    autoria: 'Louie',
+    modelo: 'modelo1'
+  }
+
 }

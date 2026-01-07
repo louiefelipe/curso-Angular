@@ -10,6 +10,7 @@
         id="pensamento"
         name="pensamento"
         placeholder="Digite um pensamento ou anotação..."
+        [value]="pensamento.conteudo"
         >
 
         <label for="autoria">Autor ou fonte</label>
@@ -85,6 +86,9 @@
                 </div>
             </div>
         </div>
-
+        <div class="acoes">
+            <button class="botao">Cancelar</button>
+            <button class="botao">Salvar</button>
+        </div>
     </form>
 </section>
