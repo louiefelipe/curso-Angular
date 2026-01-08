@@ -10,7 +10,7 @@
         id="pensamento"
         name="pensamento"
         placeholder="Digite um pensamento ou anotação..."
-        [value]="pensamento.conteudo"
+        [(ngModel)]="pensamento.conteudo"
         >
 
         <label for="autoria">Autor ou fonte</label>
@@ -20,6 +20,7 @@
         id="autoria"
         name="autoria"
         placeholder="Digite o autor ou fonte..."
+        [(ngModel)]="pensamento.autoria"
         >
 
         <label for="modelo">Selecione o Modelo do Card:</label>
@@ -39,8 +40,8 @@
                 Prévia:
                 <div class="modelo modelo1 ff-roboto-mono">
                     <img src="/imagens/modelo1.png" alt="modelo1">
-                    <p class="conteudo">Aqui irá o conteúdo</p>
-                    <p class="autoria"><b>Aqui irá a autoria</b></p>
+                    <p class="conteudo">{{ pensamento.conteudo }}</p>
+                    <p class="autoria"><b>{{ pensamento.autoria }}</b></p>
                 </div>
             </div>
         </div> 
@@ -60,8 +61,8 @@
                 Prévia:
                 <div class="modelo modelo2 ff-roboto-mono">
                     <img src="/imagens/modelo2.png" alt="modelo2">
-                    <p class="conteudo">Aqui irá o conteúdo</p>
-                    <p class="autoria"><b>Aqui irá a autoria</b></p>
+                    <p class="conteudo">{{ pensamento.conteudo }}</p>
+                    <p class="autoria"><b>{{ pensamento.autoria }}</b></p>
                 </div>
             </div>
         </div>
@@ -81,14 +82,14 @@
                 Prévia:
                 <div class="modelo modelo3 ff-roboto-mono">
                     <img src="/imagens/modelo3.png" alt="modelo3">
-                    <p class="conteudo">Aqui irá o conteúdo</p>
-                    <p class="autoria"><b>Aqui irá a autoria</b></p>
+                    <p class="conteudo">{{ pensamento.conteudo }}</p>
+                    <p class="autoria"><b>{{ pensamento.autoria }}</b></p>
                 </div>
             </div>
         </div>
         <div class="acoes">
-            <button class="botao">Cancelar</button>
-            <button class="botao">Salvar</button>
+            <button (click)="cancelar()" class="botao">Cancelar</button>
+            <button (click)="salvarPensamento()" class="botao">Salvar</button>
         </div>
     </form>
 </section>
