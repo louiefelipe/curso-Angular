@@ -1,0 +1,19 @@
+.mural {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin: 2rem 0 1rem;
+}
+
+.d-flex{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.sem-pensamentos {
+  text-align: center;
+  padding: 2rem 0 5rem;
+}
