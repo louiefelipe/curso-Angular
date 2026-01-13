@@ -1,16 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-pensamento',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './pensamento.html',
   styleUrl: './pensamento.css',
 })
-export class Pensamento {
-  pensamento = {
-    
-    conteudo: 'Angular teste',
-    autoria: 'Dev',
-    modelo: 'modelo1'
+export class PensamentoComponent implements OnInit{
+  @Input() pensamento = {
+    conteudo: '',
+    autoria: '',
+    modelo: 'modelo2'
   }
+
+  constructor() { }
+  ngOnInit(): void {
+  }
+
+  larguraPensamento (): string {
+    if(this.pensamento.conteudo.length >= 256){
+      return 'pensamento-g'
+    }
+    return 'pensamento-p'
+  }
+  
 }
