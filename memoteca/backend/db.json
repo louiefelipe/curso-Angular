@@ -1,40 +1,10 @@
 {
   "pensamentos": [
     {
-      "id": "1",
-      "conteudo": "chambaril kkkkk",
-      "autoria": "mae",
-      "modelo": "modelo1"
-    },
-    {
-      "id": "1",
-      "conteudo": "eu escutando anunciação",
-      "autoria": "kev",
-      "modelo": "modelo2"
-    },
-    {
-      "id": "1",
-      "conteudo": "aquela amiga que",
-      "autoria": "rob",
-      "modelo": "modelo3"
-    },
-    {
       "id": 0,
       "conteudo": "atumalaca",
       "autoria": "louie",
       "modelo": "modelo1"
-    },
-    {
-      "id": 0,
-      "conteudo": "oiiii",
-      "autoria": "euuu",
-      "modelo": "modelo1"
-    },
-    {
-      "id": 0,
-      "conteudo": "mulhezinha",
-      "autoria": "millyelmo",
-      "modelo": "modelo2"
     }
   ]
 }

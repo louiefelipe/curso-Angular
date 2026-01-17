@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-criar-pensamento',
+  standalone: true,
   imports: [FormsModule],
   templateUrl: './criar-pensamento.html',
   styleUrl: './criar-pensamento.css',
@@ -16,7 +17,7 @@ export class CriarPensamento implements OnInit{
     id: 0,
     conteudo:'',
     autoria: '',
-    modelo: ''
+    modelo: 'modelo1'
   }
 
   constructor(
@@ -30,12 +31,11 @@ export class CriarPensamento implements OnInit{
 
   }
 
-  salvarPensamento(){
-    this.service.criar(this.pensamento).subscribe(() =>{
-      this.router.navigate(['/listarPensamento'])
-    })
-  }
-
+ salvarPensamento() {
+  this.service.criar(this.pensamento).subscribe(() => {
+    this.router.navigate(['/listarPensamento']);
+  });
+}
   cancelar(){
     this.router.navigate(['/listarPensamento'])
   }

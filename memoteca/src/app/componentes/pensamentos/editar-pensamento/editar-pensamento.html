@@ -1,4 +1,4 @@
-<section class="container criar-pensamentos ff-inter">
+<section class="container editar-pensamentos ff-inter">
     <header class="header">
         <h2>Adicione um <br> Novo Pensamento:</h2>
     </header>
@@ -33,12 +33,9 @@
             id="modelo1" 
             value="modelo1" 
             name="modelo-card"
-            [(ngModel)]="pensamento.modelo"
-            >
+            [(ngModel)]="pensamento.modelo">
 
-            <div class="custom-radio">
-                <span></span>
-            </div>
+            <div class="custom-radio"><span></span></div>
             <span>Modelo 1</span>
         </label>
         Prévia:
@@ -55,8 +52,9 @@
             id="modelo2" 
             value="modelo2" 
             name="modelo-card"
-             [(ngModel)]="pensamento.modelo"
+            [(ngModel)]="pensamento.modelo"
             >
+
             <div class="custom-radio"><span></span></div>
             <span>Modelo 2</span>
         </label>
@@ -76,6 +74,7 @@
             name="modelo-card"
             [(ngModel)]="pensamento.modelo"
             >
+            
             <div class="custom-radio"><span></span></div>
             <span>Modelo 3</span>
         </label>
@@ -90,7 +89,7 @@
 </div>
         <div class="acoes">
             <button (click)="cancelar()" class="botao">Cancelar</button>
-            <button (click)="salvarPensamento()" class="botao">Salvar</button>
+            <button (click)="editarPensamento()" class="botao">Salvar</button>
         </div>
     </form>
 </section>
