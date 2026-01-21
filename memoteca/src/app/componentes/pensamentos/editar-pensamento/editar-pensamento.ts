@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Pensamentoo } from '../pensamentoo';
 import { FormsModule } from '@angular/forms';
 import { PensamentoService } from '../pensamento-service';
@@ -23,7 +23,8 @@ export class EditarPensamento implements OnInit{
   constructor(
   private service: PensamentoService,
   private router: Router,
-  private route: ActivatedRoute
+  private route: ActivatedRoute,
+  private cdr: ChangeDetectorRef
   ){ }
 
   ngOnInit(): void {
@@ -31,6 +32,7 @@ export class EditarPensamento implements OnInit{
     if (id && id !== '0') {
     this.service.buscarPorId(parseInt(id)).subscribe((pensamento) => {
       this.pensamento = pensamento;
+      this.cdr.detectChanges();
     });
   }
   }
