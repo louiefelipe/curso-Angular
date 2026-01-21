@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 export class CriarPensamento implements OnInit{
 
   pensamento: Pensamentoo = {
-    id: 0,
+    
     conteudo:'',
     autoria: '',
     modelo: 'modelo1'
