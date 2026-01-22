@@ -1,13 +1,13 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Pensamentoo } from '../pensamentoo';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PensamentoService } from '../pensamento-service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-editar-pensamento',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, ReactiveFormsModule],
   templateUrl: './editar-pensamento.html',
   styleUrl: './editar-pensamento.css',
 })
