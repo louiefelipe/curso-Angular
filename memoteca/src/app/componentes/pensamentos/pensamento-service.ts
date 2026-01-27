@@ -30,10 +30,10 @@ export class PensamentoService {
     return this.http.delete<Pensamentoo>(url)
   }
 
-  buscarPorId(id: number): Observable<Pensamentoo>{
-    const url = `${this.API}/${id}`
-    return this.http.get<Pensamentoo>(url)
-  }
+  buscarPorId(id: number): Observable<Pensamentoo> {
+  const url = `${this.API}/${id}`;
+  return this.http.get<Pensamentoo>(url);
+}
 
 
   }

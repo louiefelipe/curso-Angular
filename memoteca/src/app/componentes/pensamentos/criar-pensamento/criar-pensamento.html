@@ -11,6 +11,11 @@
         formControlName="conteudo"
         placeholder="Digite um pensamento ou anotação..."
         >
+        @if (formulario.get('conteudo')?.errors && formulario.get('conteudo')?.touched) {
+        <div class="mensagem__erro">
+        Preencha o campo!
+        </div>
+        }
 
         <label for="autoria">Autor ou fonte</label>
         <input 
@@ -20,7 +25,12 @@
         formControlName="autoria"
         placeholder="Digite o autor ou fonte..."
         >
-
+        @if (formulario.get('autoria')?.errors?.['required'] && formulario.get('autoria')?.touched) {
+        <div class="mensagem__erro">
+        A autoria é obrigatória!
+        </div>
+        }
+       
         <label for="modelo">Selecione o Modelo do Card:</label>
 
         <div class="container-radio">
@@ -85,7 +95,12 @@
 </div>
         <div class="acoes">
             <button (click)="cancelar()" class="botao">Cancelar</button>
-            <button (click)="salvarPensamento()" class="botao">Salvar</button>
+
+            <button [disabled]="!formulario.valid" 
+            (click)="salvarPensamento()" 
+            [ngClass]="habilitarBotao()"
+            >Salvar
+        </button>
         </div>
     </form>
 </section>
