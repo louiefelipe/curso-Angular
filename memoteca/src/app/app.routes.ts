@@ -3,7 +3,6 @@ import { CriarPensamento } from './componentes/pensamentos/criar-pensamento/cria
 import { ListarPensamento } from './componentes/pensamentos/listar-pensamento/listar-pensamento';
 import { ExcluirPensamento } from './componentes/pensamentos/excluir-pensamento/excluir-pensamento';
 import { EditarPensamento } from './componentes/pensamentos/editar-pensamento/editar-pensamento';
-import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
      {
@@ -30,7 +29,7 @@ export const routes: Routes = [
    
 ];
 
-@NgModule({
+({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })

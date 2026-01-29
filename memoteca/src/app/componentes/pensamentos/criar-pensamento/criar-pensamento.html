@@ -4,13 +4,14 @@
     </header>
     <form [formGroup]="formulario">
         <label for="pensamento">Pensamentos e Anotações</label>
-        <input 
-        type="textarea" 
+        <input
+        type="text"
         class="input" 
         id="pensamento"
         formControlName="conteudo"
         placeholder="Digite um pensamento ou anotação..."
         >
+
         @if (formulario.get('conteudo')?.errors && formulario.get('conteudo')?.touched) {
         <div class="mensagem__erro">
         Preencha o campo!
@@ -18,13 +19,15 @@
         }
 
         <label for="autoria">Autor ou fonte</label>
-        <input 
-        type="text" 
+        <input
+        type="text"
         class="input" 
         id="autoria"
         formControlName="autoria"
         placeholder="Digite o autor ou fonte..."
         >
+        
+
         @if (formulario.get('autoria')?.errors?.['required'] && formulario.get('autoria')?.touched) {
         <div class="mensagem__erro">
         A autoria é obrigatória!

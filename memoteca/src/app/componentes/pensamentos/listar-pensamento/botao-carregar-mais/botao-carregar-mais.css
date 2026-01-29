@@ -1,0 +1,22 @@
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.carregar-mais {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  width: 250px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.mensagem-center {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #154580;
+  font-weight: 500;
+}

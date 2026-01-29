@@ -6,13 +6,14 @@
     @if (formulario){ 
     <form [formGroup]="formulario">
         <label for="pensamento">Pensamentos e Anotações</label>
-        <input 
-        type="textarea" 
+        <input
+        type="text"
         class="input" 
         id="pensamento"
-        formControlName="pensamento"
+        formControlName="conteudo"
         placeholder="Digite um pensamento ou anotação..."
         >
+
         @if (formulario.get('conteudo')?.errors && formulario.get('conteudo')?.touched) {
         <div class="mensagem__erro">
         Preencha o campo!
@@ -27,6 +28,7 @@
         formControlName="autoria"
         placeholder="Digite o autor ou fonte..."
         >
+        
          @if (formulario.get('autoria')?.errors?.['required'] && formulario.get('autoria')?.touched) {
         <div class="mensagem__erro">
         A autoria é obrigatória!
@@ -98,13 +100,16 @@
 
 </div>
         <div class="acoes">
-            <button (click)="cancelar()" class="botao">Cancelar</button>
+        <button (click)="cancelar()" class="botao">Cancelar</button>
 
-            <button [disabled]="!formulario.valid"
-            (click)="editarPensamento()"
-            [ngClass]="habilitarBotao()"
-            >Salvar</button>
-        </div>
+        <button 
+        [disabled]="!formulario.valid"
+        (click)="editarPensamento()"
+        [ngClass]="habilitarBotao()"
+    >
+        Salvar
+    </button>
+    </div>
     </form>
 }
 </section>

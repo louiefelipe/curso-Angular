@@ -16,13 +16,6 @@ export class EditarPensamento implements OnInit{
 
   formulario!: FormGroup
 
-  pensamento: Pensamentoo = {
-    id: 0,
-    conteudo: '',
-    autoria: '',
-    modelo: ''
-  }
-
   constructor(
   private service: PensamentoService,
   private router: Router,
@@ -36,10 +29,14 @@ export class EditarPensamento implements OnInit{
     id: [null],
     conteudo: ['', Validators.compose([
       Validators.required,
-      Validators.minLength(3)
+      Validators.pattern(/(.|\s)*\S(.|\s)*/)
+    ])],
+    autoria: ['', Validators.compose([
+      Validators.required
     ])],
     modelo: ['modelo1']
    });
+
    const id= this.route.snapshot.paramMap.get('id');
    if (id){
     this.service.buscarPorId(parseInt(id)).subscribe((pensamento) =>{
@@ -49,22 +46,20 @@ export class EditarPensamento implements OnInit{
   }
 
   editarPensamento(){
-    this.service.editar(this.pensamento).subscribe(() => {
-      this.router.navigate(['/listarPensamento'], { onSameUrlNavigation: 'reload' }) 
-    })
+    if (this.formulario.valid){
+    this.service.editar(this.formulario.value).subscribe(() => {
+      this.router.navigate(['/listarPensamento']);
+    });
+    }
   }
 
   habilitarBotao(): string {
-    if(this.formulario.valid){
-      return 'botao'
-    } else {
-      return 'botao_desabilitado'
-    }
+    return this.formulario.valid ? 'botao' : 'botao_desabilitado';
   }
   
 
   cancelar(){
-     this.router.navigate(['/listarPensamento'])
+     this.router.navigate(['/listarPensamento']);
   }
 
 }
