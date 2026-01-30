@@ -6,18 +6,21 @@
 
   <div class="mural">
     @for (pensamento of listaPensamentos; track pensamento.id) {
-      <app-pensamento [pensamento]="pensamento"></app-pensamento>
+      <app-pensamento [pensamento]="pensamento">
+      </app-pensamento>
     } @empty {
       <div class="ff-inter sem-pensamentos">
-        <p>Ainda não há pensamentos cadastrados!</p>
+        <p>Ainda não há pensamentos Cadastrados!</p>
       </div>
     }
   </div>
 
-  <app-botao-carregar-mais 
-  [haMaisPensamentos]="haMaisPensamentos"
-  (aoClicar)="carregarMaisPensamentos()">
-  </app-botao-carregar-mais>
-
+    @if (haMaisPensamentos && listaPensamentos.length > 0){
+    <app-botao-carregar-mais 
+    [haMaisPensamentos]="haMaisPensamentos"
+    (aoClicar)="carregarMaisPensamentos()"
+    ></app-botao-carregar-mais>
+  }
 </section>
+
 

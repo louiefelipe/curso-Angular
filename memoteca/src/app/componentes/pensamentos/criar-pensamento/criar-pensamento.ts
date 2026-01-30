@@ -39,20 +39,14 @@ export class CriarPensamento implements OnInit{
 
  salvarPensamento() {
   if (this.formulario.valid){
-    const idAleatorio = Math.floor(Math.random() * 10000);
-    const novoPensamento = {
-      ...this.formulario.value,
-      id: idAleatorio
-    };
-
-    this.service.criar(novoPensamento).subscribe({
-      next: () => {
-        this.router.navigate(['/listarPensamento'])
+   this.service.criar(this.formulario.value).subscribe({
+    next: () => {
+        this.router.navigate(['/listarPensamento']);
       },
       error: (erro) => {
-        console.error('Erro ao salvar pensamento:', erro)
+        console.error('Erro ao salvar pensamento:', erro);
       }
-    })
+    });
   } else {
     this.formulario.markAsTouched();
     console.log('Erros de validação na autoria', this.formulario.get('autoria')?.errors)

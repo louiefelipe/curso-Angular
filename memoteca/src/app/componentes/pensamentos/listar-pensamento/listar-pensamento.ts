@@ -19,8 +19,10 @@ export class ListarPensamento implements OnInit{
   paginaAtual: number = 1
   haMaisPensamentos: boolean = true;
 
-  constructor(private service: PensamentoService, private cdr: ChangeDetectorRef)
-  { }
+  constructor(
+    private service: PensamentoService, 
+    private cdr: ChangeDetectorRef
+  ) { }
 
   ngOnInit(): void {
     this.service.listar(this.paginaAtual).subscribe((listaPensamentos) => {
@@ -30,15 +32,16 @@ export class ListarPensamento implements OnInit{
   }
 
   carregarMaisPensamentos(){
-   this.service.listar(this.paginaAtual + 1).subscribe(listaNova => {
-    if (listaNova.length){
+  this.service.listar(this.paginaAtual + 1).subscribe((listaNova) => {
+    if(listaNova.length){
       this.listaPensamentos = [...this.listaPensamentos, ...listaNova];
       this.paginaAtual++;
     }
-    if (listaNova.length < 6){
+    if(listaNova.length < 5){
       this.haMaisPensamentos = false;
     }
-   })
+    this.cdr.detectChanges();
+  });
   }
 
 }

@@ -1,75 +1,21 @@
 {
   "pensamentos": [
     {
-      "id": "1067",
-      "conteudo": "Para o seu projeto na UCB, o Angular 21 exige foco em componentes standalone e formulários reativos. Ajustar o CSS com `resize: none` e garantir IDs numéricos no `db.json` resolvem os erros de edição e exclusão. Continue evoluindo seu código, Louie Felipe!",
-      "autoria": "gemini",
-      "modelo": "modelo2"
-    },
-    {
-      "id": "9691",
-      "conteudo": "Estou evoluindo a aplicação",
-      "autoria": "louie",
+      "id": 1,
+      "conteudo": "novo pensamento",
+      "autoria": "beats",
       "modelo": "modelo1"
     },
     {
-      "id": "4530",
-      "conteudo": "Eu acredito no amor. Eu creio que pode existir alguma chance e eu sempre acho que pode ser diferente. Talvez essa seja a explicação de todas decepções.",
-      "autoria": "Pequena Sereia",
-      "modelo": "modelo1"
-    },
-    {
-      "id": "4654",
+      "id": 2,
       "conteudo": "Seja como for o que penses, creio que é melhor dizê-lo com boas palavras.",
-      "autoria": "Shakespeare",
-      "modelo": "modelo3"
-    },
-    {
-      "id": "7750",
-      "conteudo": "Eu creio que um dos princípios essenciais da sabedoria é o de se abster das ameaças verbais ou insultos.",
-      "autoria": "Maquiavel",
-      "modelo": "modelo2"
-    },
-    {
-      "id": "5183",
-      "conteudo": "Sempre precisei De um pouco de atenção Acho que não sei quem sou Só sei do que não gosto...",
-      "autoria": "Renato Russo",
-      "modelo": "modelo3"
-    },
-    {
-      "id": "7668",
-      "conteudo": "Sempre precisei De um pouco de atenção Acho que não sei quem sou Só sei do que não gosto...",
       "autoria": "Dalai Lama",
       "modelo": "modelo2"
     },
     {
-      "id": "3153",
+      "id": "6b57",
       "conteudo": "Creio que o homem sonha unicamente para não deixar de ver; pode acontecer que um dia jorre a luz interior em nós e nenhuma outra nos será mais necessária.",
-      "autoria": "sei la",
-      "modelo": "modelo2"
-    },
-    {
-      "id": 8598,
-      "conteudo": "a",
-      "autoria": "a",
-      "modelo": "modelo1"
-    },
-    {
-      "id": 8965,
-      "conteudo": "b",
-      "autoria": "b",
-      "modelo": "modelo2"
-    },
-    {
-      "id": 9331,
-      "conteudo": "chambaril kkkk",
-      "autoria": "c",
-      "modelo": "modelo1"
-    },
-    {
-      "id": 5495,
-      "conteudo": "end of beginning",
-      "autoria": "djo",
+      "autoria": "Shakespeare",
       "modelo": "modelo3"
     }
   ]
