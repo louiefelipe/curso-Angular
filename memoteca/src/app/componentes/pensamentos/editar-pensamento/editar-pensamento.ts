@@ -1,5 +1,4 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { Pensamentoo } from '../pensamentoo';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PensamentoService } from '../pensamento-service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -45,11 +44,14 @@ export class EditarPensamento implements OnInit{
    }
   }
 
-  editarPensamento(){
-    if (this.formulario.valid){
-    this.service.editar(this.formulario.value).subscribe(() => {
-      this.router.navigate(['/listarPensamento']);
-    });
+  editarPensamento() {
+    if (this.formulario.valid) {
+      this.service.editar(this.formulario.value).subscribe({
+        next: () => {
+          this.router.navigate(['/listarPensamento']); 
+        },
+        error: (erro) => console.error('Erro ao editar:', erro)
+      });
     }
   }
 

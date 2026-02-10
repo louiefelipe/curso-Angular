@@ -37,7 +37,7 @@ export class CriarPensamento implements OnInit{
     })
   }
 
- salvarPensamento() {
+ criarPensamento() {
   if (this.formulario.valid){
    this.service.criar(this.formulario.value).subscribe({
     next: () => {

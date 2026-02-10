@@ -36,10 +36,15 @@ export class ExcluirPensamento implements OnInit{
   }
 
   excluirPensamento() {
-    if(this.pensamentoo.id){
-      this.service.excluir(this.pensamentoo.id).subscribe(() => {
-       this.router.navigate(['/listarPensamento'], { onSameUrlNavigation: 'reload' });
-        });
+    if (this.pensamentoo.id) {
+      this.service.excluir(this.pensamentoo.id).subscribe({
+        next: () => {
+          this.router.navigate(['/listarPensamento']);
+        },
+        error: (erro) => {
+          console.error('Erro ao excluir pensamento:', erro);
+        }
+      });
     }
   }
 
