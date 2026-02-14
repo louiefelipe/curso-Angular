@@ -34,25 +34,24 @@ export class ListarPensamento implements OnInit{
   }
 
   carregarMaisPensamentos(){
-  this.service.listar(++this.paginaAtual, this.filtro).subscribe((listaNova) => {
-    if(listaNova.length){
-      this.listaPensamentos = [...this.listaPensamentos, ...listaNova];
-      this.paginaAtual++;
-    }
-    if(listaNova.length < 5){
-      this.haMaisPensamentos = false;
-    }
-    this.cdr.detectChanges();
-  });
+
+    this.service.listar(++this.paginaAtual, this.filtro)
+      .subscribe(listaPensamentos => {
+        this.listaPensamentos.push(...listaPensamentos);
+        if(!listaPensamentos.length) {
+          this.haMaisPensamentos = false
+        }
+      })
   }
 
-  pesquisarPensamentos(){
+  pesquisarPensamentos() {
     this.haMaisPensamentos = true
-    this.paginaAtual = 1
+    this.paginaAtual = 1;
     this.service.listar(this.paginaAtual, this.filtro)
-    .subscribe(listaPensamentos => {
-      this.listaPensamentos = this.listaPensamentos
-    }) 
+      .subscribe(listaPensamentos => {
+        this.listaPensamentos = listaPensamentos
+        this.cdr.detectChanges
+      })
   }
 
 }

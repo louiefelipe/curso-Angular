@@ -4,6 +4,10 @@
     <p class="autoria"><b>{{ pensamento.autoria }}</b></p>
 
     <div class="acoes">
+        <button class="botao-favorito">
+            <img src="/imagens/favorito-{{mudarIconeFavorto()}}.png" 
+            alt="icone favorito {{mudarIconeFavorto()}}">
+        </button>
 
         <button class="botao-editar">
             <img src="/imagens/icone-editar.png" routerLink="/pensamentos/editarPensamento/{{pensamento.id}}" alt="icone editar">

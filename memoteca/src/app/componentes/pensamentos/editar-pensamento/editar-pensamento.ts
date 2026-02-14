@@ -33,7 +33,8 @@ export class EditarPensamento implements OnInit{
     autoria: ['', Validators.compose([
       Validators.required
     ])],
-    modelo: ['modelo1']
+    modelo: ['modelo1'],
+    favorito: [false]
    });
 
    const id= this.route.snapshot.paramMap.get('id');

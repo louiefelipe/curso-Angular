@@ -14,13 +14,13 @@ export class PensamentoService {
 
   listar(pagina: number, filtro: string): Observable<Pensamentoo[]> {
     
-    const itensPorPagina = 5;
+    const itensPorPagina = 6;
     
     let params = new HttpParams()
     .set("_page", pagina)
     .set("_limit", itensPorPagina)
     .set("_sort", "id")
-    .set("_order", "desc");
+    .set("_order", "asc");
 
     if(filtro.trim().length > 2){
       params = params.set("q", filtro)

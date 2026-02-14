@@ -33,11 +33,12 @@ export class CriarPensamento implements OnInit{
         Validators.required,
         Validators.minLength(1)
       ])],
-      modelo: ['modelo1']
+      modelo: ['modelo1'],
+      favorito: [false]
     })
   }
 
- criarPensamento() {
+ salvarPensamento() {
   if (this.formulario.valid){
    this.service.criar(this.formulario.value).subscribe({
     next: () => {
