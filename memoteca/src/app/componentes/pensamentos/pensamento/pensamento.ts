@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Pensamentoo } from '../pensamentoo';
 import { RouterLink } from "@angular/router";
+import { PensamentoService } from '../pensamento-service';
 
 @Component({
   selector: 'app-pensamento',
@@ -18,7 +19,7 @@ export class PensamentoComponent implements OnInit{
     favorito: false
   }
 
-  constructor() { }
+  constructor(private service: PensamentoService) { }
   ngOnInit(): void {
   }
 
@@ -34,6 +35,10 @@ export class PensamentoComponent implements OnInit{
       return 'inativo'
     }
     return 'ativo'
+  }
+
+  atualizarFavorito(){
+    this.service.mudarFavorito(this.pensamento).subscribe();
   }
   
 }
