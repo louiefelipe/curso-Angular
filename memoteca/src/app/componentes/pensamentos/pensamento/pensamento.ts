@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Pensamentoo } from '../pensamentoo';
 import { RouterLink } from "@angular/router";
@@ -19,6 +19,8 @@ export class PensamentoComponent implements OnInit{
     favorito: false
   }
 
+  @Input() listaFavoritos: Pensamentoo[] = [];
+
   constructor(private service: PensamentoService) { }
   ngOnInit(): void {
   }
@@ -38,7 +40,10 @@ export class PensamentoComponent implements OnInit{
   }
 
   atualizarFavorito(){
-    this.service.mudarFavorito(this.pensamento).subscribe();
+    this.service.mudarFavorito(this.pensamento).subscribe(()=>{
+      this.listaFavoritos.splice(this.listaFavoritos.indexOf(this.pensamento), 1);
+    });
+    
   }
   
 }

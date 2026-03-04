@@ -14,21 +14,23 @@
       <img src="/imagens/lupa.png" alt="lupa azul">
 
     </div>
-    <h2 class="ff-inter">Meu Mural</h2>
+    <h2 class="ff-inter" style="position: static; width: auto; height: auto; overflow: visible; display: block;">
+    {{ titulo }}
+    </h2>
 
     <div class="botoes">
-      <button class="botao">Meu Mural</button>
+      <button class="botao"(click)="recarregarMural()">Meu Mural</button>
       <button class="botao" (click)="listarFavoritos()">Meus Favoritos</button>
       <button routerLink="/criarPensamento" class="botao">Novo pensamento</button>
     </div>
-
-    <button routerLink="/criarPensamento" class="botao">Adicionar pensamento</button>
   </header>
 
   <div class="mural">
     @for (pensamento of listaPensamentos; track pensamento.id) {
-      <app-pensamento [pensamento]="pensamento">
-      </app-pensamento>
+      <app-pensamento 
+      [pensamento]="pensamento"
+      [listaFavoritos]="listaFavoritos"
+      ></app-pensamento>
     } @empty {
       <div class="ff-inter sem-pensamentos">
         <p>Ainda não há pensamentos Cadastrados!</p>
@@ -36,7 +38,7 @@
     }
   </div>
 
-    @if (haMaisPensamentos && listaPensamentos.length > 0){
+    @if (listaPensamentos.length > 0){
     <app-botao-carregar-mais 
     [haMaisPensamentos]="haMaisPensamentos"
     (aoClicar)="carregarMaisPensamentos()"
